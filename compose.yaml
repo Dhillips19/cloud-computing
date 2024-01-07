@@ -1,13 +1,12 @@
 services:
   app:
-    image: node:18-alpine
-    read_only: true	
+    image: node:18-alpine	
     command: sh -c "yarn install && yarn run dev"
     ports:
       - 0.0.0.0:3000:3000
     working_dir: /app
     volumes:
-      - ./:/app
+      - ./:/app:ro
     environment:
       MYSQL_HOST: mysql
       MYSQL_USER: root
@@ -16,9 +15,8 @@ services:
 
   mysql:
     image: mysql:8.0
-    read_only: true
     volumes:
-      - todo-mysql-data:/var/lib/mysql
+      - todo-mysql-data:/var/lib/mysql:ro
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: todos
