@@ -1,5 +1,5 @@
 body {
-    background-color: #f4f4f4;
+    background-color: silver;
     margin-top: 50px;
     font-family: 'Lato';
 }
@@ -20,6 +20,7 @@ body {
 
 .item.completed {
     text-decoration: line-through;
+    background-color: #90EE90;	
 }
 
 .toggles {
