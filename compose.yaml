@@ -6,7 +6,7 @@ services:
       - 0.0.0.0:3000:3000
     working_dir: /app
     volumes:
-      - ./:/app:ro
+      - ./:/app
     environment:
       MYSQL_HOST: mysql
       MYSQL_USER: root
@@ -16,7 +16,7 @@ services:
   mysql:
     image: mysql:8.0
     volumes:
-      - todo-mysql-data:/var/lib/mysql:ro
+      - todo-mysql-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: todos
